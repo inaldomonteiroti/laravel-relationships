@@ -71,6 +71,7 @@ class OneToOneController extends Controller
         // $location->country_id = $country->id;
         // $saveLocation = $location->save();
 
+        //Melhor forma
         $location = $country->location()->create($dataForm);
         //var_dump($location);
 
