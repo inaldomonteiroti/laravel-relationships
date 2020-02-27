@@ -8,7 +8,7 @@ use App\Models\State;
 
 class Country extends Model
 {
-    protected $fillable =['name'];
+    protected $fillable =['name','initials'];
 
     public function location()
     {
@@ -19,5 +19,9 @@ class Country extends Model
     {
         return $this->hasOne(State::class);
        // return $this->hasOne(State::class, 'country_id', 'id');
+    }
+    public function cities()
+    {
+        return $this->hasManyThrough(City::class,State::class);
     }
 }
